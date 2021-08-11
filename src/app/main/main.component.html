@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <br>
+  <br>
+  <div class="row text-center">
+    <div class="col-3">
+      <img src="assets/m01-body.png" class="img-fluid height:auto" alt="" id="img-m" />
+    </div>
+
+    <div class="col-6">
+      <div class="row card border-dark">
+        <div id="text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit
+          amet pretium dui, sit amet semper arcu. Suspendisse congue augue vitae
+          ligula finibus, nec ultrices nunc iaculis. Curabitur aliquet
+          sollicitudin nunc, sed ullamcorper neque euismod vitae.
+        </div>
+      </div>
+      <div id="option-buttons" class="btn-grid rounded">
+        <button class="btn">Option 1</button>
+        <button class="btn">Option 2</button>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <img src="assets/fm02-body.png" class="img-fluid" alt="" id="img-f" />
+    </div>
+  </div>
+</div>
+
+<!--create a modal using ng-template directive -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Choice 1</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <img src="assets/success.png" class="img-fluid" />
+    <p>Nice!</p>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="modal.close('Save click')"
+      routerLink="/end"
+    >
+      Continue
+    </button>
+  </div>
+</ng-template>

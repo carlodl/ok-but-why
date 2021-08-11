@@ -1,0 +1,17 @@
+.btn-grid {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+    background-color: rgb(131, 247, 255);
+}
+
+.btn{
+    background-color: paleturquoise;
+    border: 2px solid slategrey;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.btn:hover{
+ border-color: lightgreen;
+}

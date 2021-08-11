@@ -1,0 +1,27 @@
+<div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="text-center">
+    <h1>for the better</h1>
+  </div>
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <form [formGroup]="startForm" (ngSubmit)="onSubmit()">
+    <div class="row justify-content-center">
+      <p>
+        <input formControlName="name" placeholder="Insert your name here" />
+      </p>
+    </div>
+    <div class="row justify-content-center">
+      <button class="btn btn-success btn-md" type="submit">Start</button>
+    </div>
+  </form>
+</div>
