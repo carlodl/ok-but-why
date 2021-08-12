@@ -35,7 +35,7 @@ export class MainComponent implements OnInit {
     },
     {
       id: 1,
-      text: "Today, your Chemistry teacher reminded your class about the test conducted at the end of the week.",
+      text: "Today, your Chemistry teacher reminded your class about the test conducted at the end of the week. What do you do?",
       img_m:"m01-full-smile",
       options: [
         {
