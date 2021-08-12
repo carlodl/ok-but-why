@@ -2,14 +2,14 @@
     display: grid;
     gap: 10px;
     margin-top: 20px;
-    background-color: rgb(131, 247, 255);
+    background-color: E0B37C;
 }
 
 .btn{
     background-color: paleturquoise;
     border: 2px solid slategrey;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .btn:hover{

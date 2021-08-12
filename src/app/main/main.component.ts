@@ -72,7 +72,7 @@ export class MainComponent implements OnInit {
   
     {
       id: 4,
-      text: "A couple of weeks later, you receive your marked test papers. You got the marks you wanted! \nJane: Hey, {{name}}. How well did you do on the test? \n{{name}}: I did great! Getting enough, quality sleep and staying positive has really been helpful.",
+      text: "A couple of weeks later, you receive your marked test papers. You got the marks you wanted! \nJane: 'Hey, {{name}}. How well did you do on the test?' \n{{name}}: 'I did great! Getting enough, quality sleep and staying positive has really been helpful.'",
       img_m:"m01-full-smile",
       img_f:"fm02-full-smile",
       options: [
@@ -85,7 +85,7 @@ export class MainComponent implements OnInit {
   
     {
       id:5,
-      text: "A couple of weeks later, you receive your marked test papers. Your score was a little lower than what you aimed for. \nJane: Hey, {{name}}. How well did you do on the test? \n{{name}}: Not as good as I expected. But...",
+      text: "A couple of weeks later, you receive your marked test papers. Your score was a little lower than what you aimed for. \nJane: 'Hey, {{name}}. How well did you do on the test?' \n{{name}}: 'Not as good as I expected. But...'",
       img_m:"m01-full-sad",
       img_f:"fm02-full-nervous",
       options: [
@@ -102,7 +102,7 @@ export class MainComponent implements OnInit {
   
     {
       id:6,
-      text: "A couple of weeks later, you receive your marked test papers. Your score was much lower than what you aimed for. \nJane: Hey, {{name}}. How well did you do on the test? \n{{name}}: Not as good as I expected. But...",
+      text: "A couple of weeks later, you receive your marked test papers. Your score was much lower than what you aimed for. \nJane: 'Hey, {{name}}. How well did you do on the test?' \n{{name}}: 'Not as good as I expected. But...'",
       img_m:"m01-full-sad",
       img_f:"fm02-full-nervous",
       options: [
@@ -215,8 +215,15 @@ export class MainComponent implements OnInit {
         const button = document.createElement('button')
         button.innerText = option.text
         button.classList.add("btn")
+        button.style.backgroundColor = "#9a513f"
+        button.style.color ="#d8bdac"
         button.addEventListener('click', () => this.selectOption(option))
         optionButtonsElement.appendChild(button)
+      }
+      if(option == textNode.options[0]){
+        const or = document.createElement('h6')
+        or.innerText = "or would you rather..." 
+        optionButtonsElement.appendChild(or)
       }
     })
   }
