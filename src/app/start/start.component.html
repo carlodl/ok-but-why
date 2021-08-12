@@ -14,14 +14,14 @@
   <br />
   <br />
 
-  <form [formGroup]="startForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="startForm" novalidate (ngSubmit)="onSubmit()">
     <div class="row justify-content-center">
       <p>
         <input formControlName="name" placeholder="Insert your name here" />
       </p>
     </div>
     <div class="row justify-content-center">
-      <button class="btn btn-success btn-md" type="submit">Start</button>
+      <button class="btn btn-success btn-md" [disabled]="!startForm.valid" type="submit">Start</button>
     </div>
   </form>
 </div>

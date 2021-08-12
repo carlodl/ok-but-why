@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ export class StartComponent implements OnInit {
   ngOnInit(): void {
     //TODO: this
     this.startForm = this.fb.group({
-      name: ''
+      name: ['', Validators.required]
     })
   }
 
