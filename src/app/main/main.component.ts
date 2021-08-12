@@ -23,8 +23,19 @@ export class MainComponent implements OnInit {
   
   textNodes = [
     {
+      id: 0,
+      text: "You are a secondary school student in your final year. As your national exams draw closer, your teachers begin to give out practice paper after practice paper. Some have scheduled mock exams in the hope of encouraging students to study at home. \n\nOver the past couple of weeks, you have become increasingly apprehensive about the exams. You tried coming up with study plans, but you could not follow them consistently.",
+      img_m:"m01-full-smile",
+      options: [
+        {
+          text: "Next",
+          nextText: 1,
+        },
+      ],
+    },
+    {
       id: 1,
-      text: "You are a secondary school student in your final year. As your national exams draw closer, your teachers begin to give out practice paper after practice paper. Some have scheduled mock exams in the hope of encouraging students to study at home. Over the past couple of weeks, you have become increasingly apprehensive about the exams. You tried coming up with study plans, but you could not follow them consistently. \n\nToday, your Chemistry teacher reminded your class about the test conducted at the end of the week.",
+      text: "Today, your Chemistry teacher reminded your class about the test conducted at the end of the week.",
       img_m:"m01-full-smile",
       options: [
         {
@@ -184,7 +195,13 @@ export class MainComponent implements OnInit {
 
   startGame() {
     state = { lives: 3 }
-    this.showTextNode(1);    
+    this.showTextNode(0);    
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.sub.unsubscribe()
   }
 
   //Function to open modal
@@ -211,6 +228,11 @@ export class MainComponent implements OnInit {
     }
 
     textNode.options.forEach(option => {
+      if(option !== textNode.options[0]){
+        const orText = document.createElement('h6')
+        orText.innerText = "or would you rather..." 
+        optionButtonsElement.appendChild(orText)
+      }
       if (this.showOption(option)) {
         const button = document.createElement('button')
         button.innerText = option.text
@@ -219,11 +241,6 @@ export class MainComponent implements OnInit {
         button.style.color ="#d8bdac"
         button.addEventListener('click', () => this.selectOption(option))
         optionButtonsElement.appendChild(button)
-      }
-      if(option == textNode.options[0]){
-        const or = document.createElement('h6')
-        or.innerText = "or would you rather..." 
-        optionButtonsElement.appendChild(or)
       }
     })
   }
