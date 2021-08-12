@@ -28,7 +28,7 @@ export class MainComponent implements OnInit {
       img_m:"m01-full-smile",
       options: [
         {
-          text: "Spend some time every day to revise and ensure you get at least 8 hours of sleep each night.",
+          text: "Spend some time every day to revise and ensure you get at least 8 hours of sleep each night. (Not getting enough sleep impairs academic performance and makes it harder to get through the day.)",
           nextText: 3,
         },
         {
@@ -44,7 +44,7 @@ export class MainComponent implements OnInit {
       img_m:"m01-full-sad",
       options: [
         {
-          text: "Take a deep breath and keep a positive mindset to calm yourself down and resume the test.",
+          text: "Take a deep breath and keep a positive mindset to calm yourself down and resume the test. (Relaxation techniques to calm down can reduce symptoms of anxiety)",
           nextText: 4
         },
         {
@@ -60,11 +60,11 @@ export class MainComponent implements OnInit {
       img_m:"m01-full-sad",
       options: [
         {
-          text: "Start exercising to release some tension ",
+          text: "Start exercising to release some tension. (Exercise can release tension, and the less tension you feel as you go into the test, the better off you might be.) ",
           nextText: 5
         },
         {
-          text: "Ignore the problem and continue with your day",
+          text: "Ignore the problem and continue with your day.",
           nextText: 6
         }
       ]
@@ -90,7 +90,7 @@ export class MainComponent implements OnInit {
       img_f:"fm02-full-nervous",
       options: [
         {
-          text:"Think positively. Take this test as a learning point and aim to do better on the next one.",
+          text:"Think positively. Take this test as a learning point and aim to do better on the next one. (Research has shown that positive thinking may improve physical well-being, produce lower feelings of depression and produce lower levels of distress.)",
           nextText:8
         },
         {
@@ -107,7 +107,7 @@ export class MainComponent implements OnInit {
       img_f:"fm02-full-nervous",
       options: [
         {
-          text:"Try your best to stay positive and take this test as a learning point.",
+          text:"Try your best to stay positive and take this test as a learning point. (Research has shown that positive thinking may improve physical well-being, produce lower feelings of depression and produce lower levels of distress.)",
           nextText:9
         },
         {
@@ -124,7 +124,7 @@ export class MainComponent implements OnInit {
       img_m:"m01-full-smile",
       options: [
         {
-          text:"Take up a new hobby, go out with friends or participate in sports in addition to your normal study routine.",
+          text:"Take up a new hobby, go out with friends or participate in sports in addition to your normal study routine.  (Having a stress “outlet” can help you cope with and manage your stress.)",
           nextText:-1,
           setState: {lives: 3}
         },
@@ -142,7 +142,7 @@ export class MainComponent implements OnInit {
       img_m:"m01-full-sad",
       options: [
         {
-          text:"Talk to someone about your situation and how you feel",
+          text:"Talk to someone about your situation and how you feel. (Talking about your situation to others can drastically reduce stress.)",
           nextText:-1,
           setState: {lives: 2}
         },
@@ -160,7 +160,7 @@ export class MainComponent implements OnInit {
       img_m:"m01-full-sad",
       options: [
         {
-          text:"Seek help from a professional.",
+          text:"Seek help from a professional. (Some stress and anxiety is normal but it is good to reach out when these feelings negatively impact your everyday life)",
           nextText:-1,
           setState: {lives: 1}
         },
