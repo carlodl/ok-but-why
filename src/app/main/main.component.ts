@@ -149,7 +149,7 @@ export class MainComponent implements OnInit {
   
     {
       id:8,
-      text: "Your assignments start to pile up again and you start to feel overwhelmed by the number of things to do.\n\n{{name}}: I’m so tired of this routine, there’s so much to do and I can never finish my assignments. If only there was something I could do about this…",
+      text: "Your assignments start to pile up again and you start to feel overwhelmed by the number of things to do.\n\n{{name}}: 'I’m so tired of this routine, there’s so much to do and I can never finish my assignments. If only there was something I could do about it…'",
       img_m:"m01-full-sad",
       options: [
         {
@@ -210,30 +210,36 @@ export class MainComponent implements OnInit {
   }
 
   showTextNode(textNodeIndex) {
+    //get elements
     const textElement = document.getElementById('text')
     const optionButtonsElement = document.getElementById('option-buttons')
     const imgMElement = document.getElementById('img-m') as HTMLImageElement
     const imgFElement = document.getElementById('img-f') as HTMLImageElement
     const textNode = this.textNodes.find((textNode) => textNode.id === textNodeIndex)
     
+    //replace name with input name
     if(textNode.text.includes("{{name}}")){
       textNode.text = textNode.text.replace(/{{name}}/g, this.name)
     }
 
+    //Sets text and images
     textElement.innerText = textNode.text;
     imgMElement.src = "assets/"+ textNode.img_m +".png";
     imgFElement.src = "assets/"+ textNode.img_f +".png";
+    //remove placeholder buttons
     while (optionButtonsElement.firstChild) {
       optionButtonsElement.removeChild(optionButtonsElement.firstChild);
     }
 
     textNode.options.forEach(option => {
+      //if there are additional choices, show "would you rather" text
       if(option !== textNode.options[0]){
         const orText = document.createElement('h6')
         orText.innerText = "or would you rather..." 
         optionButtonsElement.appendChild(orText)
       }
       if (this.showOption(option)) {
+        //create option button
         const button = document.createElement('button')
         button.innerText = option.text
         button.classList.add("btn")
